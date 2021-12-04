@@ -96,7 +96,7 @@ public class NotificationBuilder {
             notification.setViewVisibility(R.id.leftInEarImg, View.INVISIBLE);
             notification.setViewVisibility(R.id.rightInEarImg, View.INVISIBLE);
         }
-
+        
         return mBuilder.build();
     }
 

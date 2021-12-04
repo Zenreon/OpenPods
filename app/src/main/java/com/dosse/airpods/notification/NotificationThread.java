@@ -39,9 +39,9 @@ public abstract class NotificationThread extends Thread {
         mNotifyManager = (NotificationManager)context.getSystemService(Context.NOTIFICATION_SERVICE);
         // On Oreo (API27) and newer, create a notification channel.
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            NotificationChannel channel = new NotificationChannel(TAG, TAG, NotificationManager.IMPORTANCE_LOW);
+            NotificationChannel channel = new NotificationChannel(TAG, TAG, NotificationManager.IMPORTANCE_DEFAULT);
             channel.setSound(null, null);
-            channel.enableVibration(true);
+            channel.enableVibration(false);
             channel.enableLights(true);
             channel.setShowBadge(true);
             channel.setLockscreenVisibility(Notification.VISIBILITY_PUBLIC);
@@ -59,7 +59,7 @@ public abstract class NotificationThread extends Thread {
             if (isConnected() && !status.isAllDisconnected()) {
                 if (!notificationShowing) {
                     Logger.debug("Creating notification");
-                    notificationShowing = true;
+                    notificationShowing = false;
                 }
                 Logger.debug(status.getAirpods().parseStatusForLogger());
                 mNotifyManager.notify(NOTIFICATION_ID, builder.build(status));
