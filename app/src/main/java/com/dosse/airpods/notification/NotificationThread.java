@@ -41,9 +41,9 @@ public abstract class NotificationThread extends Thread {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel channel = new NotificationChannel(TAG, TAG, NotificationManager.IMPORTANCE_LOW);
             channel.setSound(null, null);
-            channel.enableVibration(false);
-            channel.enableLights(false);
-            channel.setShowBadge(false);
+            channel.enableVibration(true);
+            channel.enableLights(true);
+            channel.setShowBadge(true);
             channel.setLockscreenVisibility(Notification.VISIBILITY_PUBLIC);
             mNotifyManager.createNotificationChannel(channel);
         }
