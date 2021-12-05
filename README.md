@@ -1,6 +1,7 @@
 <p align="center"><img src="fastlane/metadata/android/en-US/images/icon.png" width="150"></p> 
 <h1 align="center"><b>OpenPods</b></h1>
-<h4 align="center">The Free and Open Source app for monitoring your AirPods on Android
+<h4 align="center">The Free and Open Source app for monitoring your AirPods on Android.
+
 This is a fork to enable proper notification across WearOS devices.</h4>
 <p align="center">
 	<a href="https://github.com/adolfintel/OpenPods/releases">
