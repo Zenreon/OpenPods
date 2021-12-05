@@ -12,7 +12,7 @@ import com.dosse.airpods.pods.data.IPods;
 import com.dosse.airpods.pods.data.RegularPods;
 import com.dosse.airpods.pods.data.SinglePods;
 
-public class NotificationBuilder {
+public class NotificationBuilder extends NotificationCompat {
     public static final String TAG = "AirPods";
     public static final long TIMEOUT_CONNECTED = 30000;
     public static final int NOTIFICATION_ID = 1;
@@ -49,9 +49,6 @@ public class NotificationBuilder {
             notification.setViewVisibility(R.id.leftPod, single ? View.GONE : View.VISIBLE);
             notification.setViewVisibility(R.id.rightPod, single ? View.GONE : View.VISIBLE);
         }
-        NotificationCompat.Builder NotificationBuilder =
-        new NotificationCompat.Builder(status)
-        .setContentTitle(eventTitle);
 
             if (isFreshStatus(status)) for (RemoteViews notification : notificationArr) {
             notification.setViewVisibility(R.id.leftPodText, View.VISIBLE);
