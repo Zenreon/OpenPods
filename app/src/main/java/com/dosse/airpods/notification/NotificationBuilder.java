@@ -49,8 +49,11 @@ public class NotificationBuilder {
             notification.setViewVisibility(R.id.leftPod, single ? View.GONE : View.VISIBLE);
             notification.setViewVisibility(R.id.rightPod, single ? View.GONE : View.VISIBLE);
         }
+        NotificationCompat.Builder NotificationBuilder =
+        new NotificationCompat.Builder(status)
+        .setContentTitle(eventTitle);
 
-        if (isFreshStatus(status)) for (RemoteViews notification : notificationArr) {
+            if (isFreshStatus(status)) for (RemoteViews notification : notificationArr) {
             notification.setViewVisibility(R.id.leftPodText, View.VISIBLE);
             notification.setViewVisibility(R.id.rightPodText, View.VISIBLE);
             notification.setViewVisibility(R.id.podCaseText, View.VISIBLE);
