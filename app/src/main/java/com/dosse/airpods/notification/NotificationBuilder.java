@@ -12,7 +12,7 @@ import com.dosse.airpods.pods.data.IPods;
 import com.dosse.airpods.pods.data.RegularPods;
 import com.dosse.airpods.pods.data.SinglePods;
 
-public class NotificationBuilder extends NotificationCompat {
+public class NotificationBuilder {
     public static final String TAG = "AirPods";
     public static final long TIMEOUT_CONNECTED = 30000;
     public static final int NOTIFICATION_ID = 1;
@@ -24,12 +24,13 @@ public class NotificationBuilder extends NotificationCompat {
         notificationArr = new RemoteViews[] {new RemoteViews(context.getPackageName(), R.layout.status_big), new RemoteViews(context.getPackageName(), R.layout.status_small)};
 
         mBuilder = new NotificationCompat.Builder(context, TAG);
-        mBuilder.setShowWhen(false);
+        mBuilder.setShowWhen(true);
         mBuilder.setOngoing(true);
         mBuilder.setSmallIcon(R.mipmap.notification_icon);
         mBuilder.setVisibility(NotificationCompat.VISIBILITY_PUBLIC);
         mBuilder.setCustomContentView(notificationArr[1]);
         mBuilder.setCustomBigContentView(notificationArr[0]);
+        mBuilder.extend(new NotificationCompat.WearableExtender());
     }
 
     public Notification build (PodsStatus status) {
